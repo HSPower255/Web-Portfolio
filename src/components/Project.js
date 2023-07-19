@@ -8,7 +8,7 @@ const Project = ({ item }) => {
     return (
         <div key={item.id} className="flex flex-col items-center text-center">
             <div className="mb-8">
-                <img className="rounded-2xl h-[300px] w-[500px] " src={item.image} />
+                <img className="rounded-2xl h-[300px] w-[500px] " src={item.image} alt="Project"/>
             </div>
             <p className="capitalize text-accent text-sm mb-3">{item.category}</p>
             <div className="flex items-center mb-3">
@@ -18,10 +18,10 @@ const Project = ({ item }) => {
                     </a>
                 </h3>
                 <div className="flex text-accent gap-2">
-                    <a href={item.gitrepo} target="_blank">
+                    <a href={item.gitrepo} target="_blank" rel="noreferrer" >
                         <FiGithub />
                     </a>
-                    <a href={item.webpage} target="_blank">
+                    <a href={item.webpage} target="_blank" rel="noreferrer" >
                         <FiGlobe />
                     </a>
                 </div>

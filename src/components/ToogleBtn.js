@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import LanguageContext from "./LangToogle"
 
 const SwitchBtn = () => {
-    const { language, toggleLanguage } = useContext(LanguageContext)
+    const { toggleLanguage } = useContext(LanguageContext)
     const [isChecked, setIsChecked] = useState(false)
 
     const toggleSwitch = () => {

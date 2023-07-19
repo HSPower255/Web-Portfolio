@@ -62,7 +62,7 @@ const Contact = () => {
                                     <div>
                                         <h4 className="font-body text-xl mb-1">{language === 'en' ? item.title_en : item.title_es}</h4>
                                         <p className="mb-1">{language === 'en' ? item.subtitle_en : item.subtitle_es}</p>
-                                        <a href={item.href} target="_blank" className="text-accent font-normal">{language === 'en' ? item.description_en : item.description_es}</a>
+                                        <a href={item.href} target="_blank" rel="noreferrer" className="text-accent font-normal">{language === 'en' ? item.description_en : item.description_es}</a>
                                     </div>
                                 </div>
                             )
