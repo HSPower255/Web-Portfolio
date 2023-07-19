@@ -34,7 +34,7 @@ const Hero = () => {
                             <a href="https://www.linkedin.com/in/santiagotourn/" className="btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all">
                                 {language === 'en' ? "Work with me" : "Trabaja conmigo"}
                             </a>
-                            <a href="/Resume.pdf" download="Resume.pdf" className="btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all ml-4">
+                            <a href="/resume.pdf" download="resume.pdf" className="btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all ml-4">
                                 {language === 'en' ? "Download resume" : "Descargar CV"}
                             </a>
                         </div>
