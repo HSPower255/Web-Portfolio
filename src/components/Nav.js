@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 import { navigation } from '../data'
 import { Link } from 'react-scroll'
+import LanguageContext from "./LangToogle"
 
 const Nav = () => {
+    const { language } = useContext(LanguageContext)
+
     return (
         <nav>
             <ul className="flex space-x-8 capitalize text-[15px]">
@@ -18,7 +21,7 @@ const Nav = () => {
                                 offset={-70}
                                 className="transition-all duration-300"
                             >
-                                {item.name}
+                                {language === "en" ? item.name_en : item.name_es}
                             </Link>
                         </li>
                     )

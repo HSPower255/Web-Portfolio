@@ -3,6 +3,7 @@ import Logo from '../assets/img/logo.svg'
 import Nav from '../components/Nav'
 import NavMobile from '../components/NavMobile'
 import Socials from '../components/Socials'
+import SwitchBtn from "./ToogleBtn"
 
 const Header = () => {
     const [bg, setBg] = useState(false)
@@ -12,7 +13,6 @@ const Header = () => {
             return window.scrollY > 50 ? setBg(true) : setBg(false)
         })
     }, [])
-
 
     return (
         <header className={`${bg ? 'bg-tertiary h-20' : 'h-24'} flex items-center fixed top-0 w-full text-white z-10 transition-all duration-300`}>
@@ -25,6 +25,9 @@ const Header = () => {
                 </div>
                 <div className="hidden lg:block">
                     <Socials />
+                </div>
+                <div className="hidden lg:block">
+                    <SwitchBtn />
                 </div>
                 <div className="lg:hidden">
                     <NavMobile />

@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { projectsData } from "../data"
 import { projectsNav } from "../data"
 import Project from "./Project"
+import LanguageContext from "./LangToogle"
 
 const Projects = () => {
     const [item, setItem] = useState({ name: 'all' })
     const [projects, setProjects] = useState([])
     const [active, setActive] = useState(0)
+    const { language } = useContext(LanguageContext)
 
     useEffect(() => {
         if (item.name === 'all') {
@@ -26,8 +28,6 @@ const Projects = () => {
         setActive(index)
     }
 
-
-
     return (
         <div>
             <nav className="mb-12 max-w-xl mx-auto">
@@ -39,7 +39,7 @@ const Projects = () => {
                                 key={index}
                                 className={`${active === index ? 'active' : ''} cursor-pointer capitalize m-4`}
                             >
-                                {item.name}
+                                {language === 'en' ? item.name_en : item.name_es}
                             </li>
                         )
                     })}

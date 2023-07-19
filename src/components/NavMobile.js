@@ -1,13 +1,15 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { navigation } from "../data"
 import { XIcon } from '@heroicons/react/outline'
 import { MenuAlt3Icon } from '@heroicons/react/outline'
-import Socials from "./Socials"
 import { motion } from "framer-motion"
 import { Link } from "react-scroll"
+import LanguageContext from "./LangToogle"
+import SwitchBtn from "./ToogleBtn"
 
 const NavMobile = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const { language } = useContext(LanguageContext)
 
     const circleVariants = {
         hidden: {
@@ -57,11 +59,14 @@ const NavMobile = () => {
                                 offset={-70}
                                 className="text-xl cursor-pointer capitalize"
                             >
-                                {item.name}
+                                {language === "en" ? item.name_en : item.name_es}
                             </Link>
                         </li>
                     )
                 })}
+                <div onClick={() => setIsOpen(false)}>
+                    <SwitchBtn />
+                </div>
             </motion.ul>
         </nav>
     )
